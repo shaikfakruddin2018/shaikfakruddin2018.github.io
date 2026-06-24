@@ -125,6 +125,13 @@ h2.title{font-size:2.1rem;font-weight:700;letter-spacing:-.02em;margin-bottom:14
 .proj:hover{transform:translateY(-4px);background:var(--card-hover)}
 .proj:hover::after{opacity:.6}
 .proj.featured{grid-column:1/-1;background:linear-gradient(135deg,#0d1726,#11151d)}
+.thesis-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:24px;align-items:center;margin-bottom:18px}
+.thesis-grid img{width:100%;border-radius:10px;border:1px solid var(--border);background:var(--bg)}
+.thesis-findings{list-style:none;display:flex;flex-direction:column;gap:11px}
+.thesis-findings li{position:relative;padding-left:20px;color:var(--text-dim);font-size:.92rem;line-height:1.5}
+.thesis-findings li::before{content:"▹";position:absolute;left:0;color:var(--accent)}
+.thesis-findings strong{color:var(--text)}
+@media(max-width:760px){.thesis-grid{grid-template-columns:1fr;gap:16px}}
 .proj-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:16px}
 .proj-icon{font-size:1.7rem}
 .proj-badge{font-size:.7rem;font-family:'JetBrains Mono',monospace;padding:4px 10px;border-radius:20px;font-weight:600}
@@ -283,13 +290,22 @@ footer a:hover{color:var(--accent)}
       </div>
     </article>
 
-    <article class="proj reveal">
-      <div class="proj-top"><span class="proj-icon">🔍</span><span class="proj-badge badge-soon">MSc THESIS · IN PROGRESS</span></div>
+    <article class="proj featured reveal">
+      <div class="proj-top"><span class="proj-icon">🔍</span><span class="proj-badge badge-live">MSc THESIS · RESULTS LIVE</span></div>
       <h3>Can a RAG System Know When It's Unsure?</h3>
-      <p>My MSc thesis on <strong>uncertainty calibration in retrieval-augmented LLMs</strong> — measuring whether a model's confidence can be trusted for risk-sensitive decisions, and how embedding quality shapes that reliability. Evaluated with LLM-as-judge and retrieval metrics (MRR, nDCG, recall, precision) via LangChain &amp; LangGraph.</p>
-      <p style="font-size:.8rem;color:var(--text-faint);font-style:italic;margin-bottom:18px">“Evaluating and Improving Uncertainty Calibration in Retrieval-Augmented LLMs: The Role of Embedding Quality in Risk-Sensitive Decision Making.”</p>
-      <div class="proj-stack"><span class="tag">RAG</span><span class="tag">Uncertainty Calibration</span><span class="tag">LangChain</span><span class="tag">LangGraph</span><span class="tag">FAISS</span><span class="tag">Chroma</span></div>
-      <div class="proj-links"><a href="https://github.com/shaikfakruddin2018" target="_blank" rel="noopener">Coming soon →</a></div>
+      <p>My MSc thesis on <strong>uncertainty calibration in retrieval-augmented LLMs</strong> — measuring whether a model's confidence can be trusted for risk-sensitive decisions, and how embedding quality shapes that reliability. A full pipeline over real financial filings: 5 embedding models compared, LLM-as-judge grading, and post-hoc calibration.</p>
+      <div class="thesis-grid">
+        <img src="thesis-results.png" alt="Embedding model retrieval comparison" loading="lazy"/>
+        <ul class="thesis-findings">
+          <li><strong>Open-source <span style="color:var(--accent)">BGE-base beat both OpenAI</span> embedding models</strong> on this corpus (best MRR 0.569).</li>
+          <li>Diagnosed model <strong>overconfidence</strong> — ECE 0.169, Brier 0.228 over 100 QA pairs.</li>
+          <li>Post-hoc <strong>isotonic regression cut ECE by ~32%</strong> (0.135 → 0.092).</li>
+          <li>Metrics: Recall@K · MRR · ECE · Brier · LLM-as-judge.</li>
+        </ul>
+      </div>
+      <p style="font-size:.8rem;color:var(--text-faint);font-style:italic;margin:4px 0 18px">“Evaluating and Improving Uncertainty Calibration in Retrieval-Augmented LLMs: The Role of Embedding Quality in Risk-Sensitive Decision Making.”</p>
+      <div class="proj-stack"><span class="tag">RAG</span><span class="tag">Uncertainty Calibration</span><span class="tag">FAISS</span><span class="tag">LangChain</span><span class="tag">scikit-learn</span><span class="tag">OpenAI</span></div>
+      <div class="proj-links"><a href="https://github.com/shaikfakruddin2018/rag-uncertainty-calibration" target="_blank" rel="noopener">View on GitHub →</a></div>
     </article>
 
     <article class="proj reveal">
