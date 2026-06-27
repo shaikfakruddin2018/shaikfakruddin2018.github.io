@@ -318,11 +318,21 @@ footer a:hover{color:var(--accent)}
       <div class="proj-links"><a href="https://github.com/shaikfakruddin2018/rag-uncertainty-calibration" target="_blank" rel="noopener">View on GitHub →</a></div>
     </article>
 
-    <article class="proj reveal">
-      <div class="proj-top"><span class="proj-icon">🏗️</span><span class="proj-badge badge-soon">BUILDING</span></div>
-      <h3>End-to-End ELT on Snowflake + dbt</h3>
-      <p>A reference ELT pipeline: raw ingestion, tested and documented dbt models, and a clean semantic layer — demonstrating Analytics Engineering best practices end to end.</p>
-      <div class="proj-stack"><span class="tag">Snowflake</span><span class="tag">dbt</span><span class="tag">SQL</span></div>
+    <article class="proj featured reveal">
+      <div class="proj-top"><span class="proj-icon">🏬</span><span class="proj-badge badge-live">● LIVE</span></div>
+      <h3>Enterprise Retail Data Mesh on Snowflake</h3>
+      <p>A full data platform built the way a modern data team would: <strong>five business domains each owning their own data products</strong>, transformed with dbt (medallion), provisioned with Terraform, governed with tags/masking/row-access policies, enriched with <strong>Snowflake Cortex AI</strong>, and consumed through a Streamlit BI app with a grounded AI Copilot.</p>
+      <div class="thesis-grid">
+        <img src="datamesh-architecture.png" alt="Data mesh architecture diagram" loading="lazy"/>
+        <ul class="thesis-findings">
+          <li><strong>True data mesh</strong> — each domain materialized into its <span style="color:var(--accent)">own Snowflake database</span> + GOLD schema.</li>
+          <li><strong>Governance-as-code</strong> — Terraform RBAC, PII masking &amp; country row-access policies.</li>
+          <li><strong>Snowflake Cortex AI</strong> — in-DB sentiment &amp; COMPLETE, with a rule-based fallback toggle.</li>
+          <li>Medallion dbt: staging → silver (tested) → domain gold → cross-domain.</li>
+        </ul>
+      </div>
+      <div class="proj-stack"><span class="tag">Snowflake</span><span class="tag">Cortex AI</span><span class="tag">dbt</span><span class="tag">Terraform</span><span class="tag">Streamlit</span><span class="tag">Python</span></div>
+      <div class="proj-links"><a href="https://github.com/shaikfakruddin2018/enterprise-retail-data-mesh-snowflake" target="_blank" rel="noopener">View on GitHub →</a></div>
       <div class="proj-links"><a href="https://github.com/shaikfakruddin2018" target="_blank" rel="noopener">Coming soon →</a></div>
     </article>
   </div>
